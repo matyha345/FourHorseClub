@@ -40,10 +40,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     const createDataSlider = () => {
-        const results = document.querySelector(".slider")
+        const results = document.getElementById("mainSwiperResults")
 
         const createSlider = dataSlider.map((item) => `
-            <div class="slide">
+            <div class="swiper-slide">
                 <div class="slide__body">
                     <picture class="slide__images">
                         <img src="${item.image}" alt="Аватарка пользователя">
@@ -57,56 +57,73 @@ document.addEventListener("DOMContentLoaded", function () {
 
         results.innerHTML = createSlider.join("")
     }
-
     createDataSlider()
 
-    const slides = document.querySelectorAll('.slide');
-    const prevBtn = document.querySelector('.prev');
-    const nextBtn = document.querySelector('.next');
-    let currentIndex = 0;
 
-    const showSlides = () => {
-        const startIndex = currentIndex * 3;
-        const endIndex = Math.min(startIndex + 3, slides.length);
+    const swiper = new Swiper("#mainSwiper", {
 
-        slides.forEach((slide, index) => {
-            const isVisible = index = startIndex && index < endIndex;
-            slide.style.transition = 'transform 0.5s ease';
-            slide.style.transform = isVisible ? 'translateX(-315%)' : 'translateX(0)';
-        });
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            renderBullet: function (index, className) {
+                return '<span class="' + className + '">' + (index * 3 + 1) + '</span>';
+            },
+        },
+        slidesPerGroup: 3,
+        slidesPerView: 3,
+        navigation: {
+            nextEl: ".next",
+            prevEl: ".prev",
+        },
 
-        const paginators = document.querySelectorAll('.paginator');
-
-        paginators.forEach((paginator, index) => {
-            if (index === currentIndex) {
-                paginator.classList.add('paginator-isActive');
-            } else {
-                paginator.classList.remove('paginator-isActive');
+        breakpoints: {
+            1366: {
+                slidesPerView: 3,
+                slidesPerGroup: 3,
+            },
+            768: {
+                slidesPerView: 2,
+                slidesPerGroup: 2,
+            },
+            280: {
+                slidesPerView: 1,
+                slidesPerGroup: 1,
             }
+        },
+        on: {
+            slideChange: function () {
+                const swiper = this;
+                const bullets = document.querySelectorAll('.paginator');
+                const currentIndex = swiper.activeIndex;
+                bullets.forEach((bullet, index) => {
+                    if (index * 3 <= currentIndex && currentIndex < (index + 1) * 3) {
+                        bullet.classList.add('paginator-isActive'); // Добавляем класс активного пагинатора
+                    } else {
+                        bullet.classList.remove('paginator-isActive');
+                    }
+                });
+            },
+        },
+    })
+
+    const updatePaginatorContent = () => {
+        const currentSlideIndex = swiper.realIndex + 1; // Увеличиваем на 1, так как индексация начинается с 0
+        const totalSlides = swiper.slides.length;
+
+        const paginatorContent = `${currentSlideIndex} <span>/</span> ${totalSlides}`;
+
+        document.querySelectorAll('.paginator').forEach(paginator => {
+            paginator.innerHTML = paginatorContent;
         });
+    };
 
-        prevBtn.disabled = currentIndex === 0 ? true : false;
-        prevBtn.style.opacity = currentIndex === 0 ? "0.3" : "1";
+    // Вызываем функцию при инициализации и при изменении слайда
+    updatePaginatorContent();
+    swiper.on('slideChange', updatePaginatorContent);
 
-        nextBtn.disabled = currentIndex === 0 ? false : true;
-        nextBtn.style.opacity = currentIndex === 0 ? "1" : "0.3";
-    }
-
-    prevBtn.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex -= 1;
-            showSlides();
-        }
-    });
-
-    nextBtn.addEventListener('click', () => {
-        if (currentIndex < Math.ceil(slides.length / 3) - 1) {
-            currentIndex += 1;
-            showSlides();
-        }
-    });
-
-    showSlides();
+    // Вызываем функцию при инициализации и изменении размеров окна
+    updatePaginatorContent();
+    window.addEventListener('resize', updatePaginatorContent);
 
 
 
@@ -129,10 +146,8 @@ document.addEventListener("DOMContentLoaded", function () {
     changeText();
 
     window.addEventListener('resize', () => {
-        showSlides();
         changeText();
     });
-
 
 
 

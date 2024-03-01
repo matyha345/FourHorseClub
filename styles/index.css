@@ -554,16 +554,20 @@
     text-transform: uppercase;
     color: var(--mine-shaft--two);
 }
-
-.slider {
+.slider__wrapper{
+    display: block;
+    position: relative;
+    width: 100%;
+}
+.swiper {
     margin-top: 60px;
     overflow: hidden;
     white-space: nowrap;
 }
 
-.slide {
+.swiper-slide {
     display: inline-block;
-    margin-right: 15px;
+    /* margin-right: 15px; */
     padding: 0 37px;
 }
 
@@ -620,9 +624,10 @@
     display: flex;
     align-items: center;
     position: absolute;
-    top: 8px;
-    right: 74px;
+    top: -57px;
+    right: 2px;
 }
+
 
 .paginator,
 .paginator-division {
@@ -635,20 +640,22 @@
     opacity: 0.6;
 }
 
-.paginator:nth-child(2) {
+.paginator {
     margin-left: 14px;
+    margin-right: 14px;
 }
 
 .paginator-division {
     margin: 0 5px;
 }
 
-.paginator:nth-child(4) {
-    margin-right: 14px;
-}
 
 .paginator-isActive {
     opacity: 1;
+}
+
+.swiper-button-disabled{
+    opacity: 0.3;
 }
 
 .prev,

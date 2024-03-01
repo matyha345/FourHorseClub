@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="./styles/_media.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <title>Тестовый лендинг</title>
 </head>
 
@@ -211,33 +212,41 @@
                     <h2 class="sliderS__title">
                         Участники турнира
                     </h2>
+                    <div class="slider__wrapper">
 
-                    <div class="slider">
-                        <!-- Элементы будут заполнены с помощью map в JavaScript -->
-                    </div>
+                        <div class="swiper" id="mainSwiper">
+                            <div class="swiper-wrapper" id="mainSwiperResults">
+                                <!-- Элементы будут заполнены с помощью map в JavaScript -->
+                            </div>
+                        </div>
 
-                    <div class="sliderS__button">
-                        <button class="prev">
-                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="22" cy="22" r="22" transform="rotate(-180 22 22)" fill="#313131" />
-                                <path d="M24.5382 30.4614L16.0767 21.9999L24.5382 13.5384" stroke="white"
-                                    stroke-width="2" stroke-linecap="square" />
-                            </svg>
-                        </button>
-                        <span class="paginator paginator-isActive">3</span>
-                        <span class="paginator-division">/</span>
-                        <span class="paginator ">6</span>
-                        <button class="next">
-                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="22" cy="22" r="22" fill="#313131" />
-                                <path d="M19.4618 13.5385L27.9233 22L19.4618 30.4615" stroke="white" stroke-width="2"
-                                    stroke-linecap="square" />
-                            </svg></button>
+                        <div class="sliderS__button">
+                            <button class="prev">
+                                <svg width="44" height="44" viewBox="0 0 44 44" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="22" cy="22" r="22" transform="rotate(-180 22 22)" fill="#313131" />
+                                    <path d="M24.5382 30.4614L16.0767 21.9999L24.5382 13.5384" stroke="white"
+                                        stroke-width="2" stroke-linecap="square" />
+                                </svg>
+                            </button>
+
+
+                            <span class="paginator"></span>
+
+
+                            <button class="next">
+                                <svg width="44" height="44" viewBox="0 0 44 44" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="22" cy="22" r="22" fill="#313131" />
+                                    <path d="M19.4618 13.5385L27.9233 22L19.4618 30.4615" stroke="white"
+                                        stroke-width="2" stroke-linecap="square" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
 
         <div class="running__line-footer">
@@ -249,6 +258,7 @@
     </main>
 
 </body>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="./main.js"></script>
 
 </html>
