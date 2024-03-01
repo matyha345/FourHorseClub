@@ -1,0 +1,67 @@
+@font-face {
+    font-family: "Golos Text", sans-serif;
+    src: url('../fonts/golos-text/GolosText-Regular.eot');
+    src:
+        local('fonts/golos-text/GolosText-Regular'),
+        local('fonts/golos-text/GolosText-Regular'),
+        url('../fonts/golos-text/GolosText-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/golos-text/GolosText-Regular.woff') format('woff'),
+        url('../fonts/golos-text/GolosText-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Golos Text", sans-serif;
+    src: url('../fonts/golos-text/GolosText-Medium.eot');
+    src:
+        local('fonts/golos-text/GolosText-Medium'),
+        local('fonts/golos-text/GolosText-Medium'),
+        url('../fonts/golos-text/GolosText-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/golos-text/GolosText-Medium.woff') format('woff'),
+        url('../fonts/golos-text/GolosText-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Golos Text", sans-serif;
+    src: url('../fonts/golos-text/GolosText-SemiBold.eot');
+    src:
+        local('fonts/golos-text/GolosText-SemiBold'),
+        local('fonts/golos-text/GolosText-SemiBold'),
+        url('../fonts/golos-text/GolosText-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/golos-text/GolosText-SemiBold.woff') format('woff'),
+        url('../fonts/golos-text/GolosText-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Golos Text", sans-serif;
+    src: url('../fonts/golos-text/GolosText-Bold.eot');
+    src:
+        local('fonts/golos-text/GolosText-Bold'),
+        local('fonts/golos-text/GolosText-Bold'),
+        url('../fonts/golos-text/GolosText-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/golos-text/GolosText-Bold.woff') format('woff'),
+        url('../fonts/golos-text/GolosText-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* ================= Merriweather ================= */
+/* ================= Merriweather ================= */
+
+@font-face {
+    font-family: "Merriweather", sans-serif;
+    src: url('../fonts/merriweather/Merriweather-Regular.eot');
+    src:
+        local('fonts/merriweather/Merriweather-Regular'),
+        local('fonts/merriweather/Merriweather-Regular'),
+        url('../fonts/merriweather/Merriweather-Regular?#iefix') format('embedded-opentype'),
+        url('../fonts/merriweather/Merriweather-Regular.woff') format('woff'),
+        url('../fonts/merriweather/Merriweather-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}

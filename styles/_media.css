@@ -1,0 +1,248 @@
+@media (min-width: 1500px) {
+    .preview::after {
+        background-position: bottom 0.7em right 5em
+    }
+
+    .sliderS__button {
+        right: 20%;
+    }
+}
+
+@media (max-width: 1280px) {
+
+    .container {
+        padding: 0 20px;
+    }
+
+    .preview {
+        height: 100%;
+    }
+
+    .preview__body-block {
+        max-width: 100%;
+    }
+
+    .preview__body-btns {
+        flex-direction: column;
+    }
+
+    .button__default-black {
+        width: 100%;
+    }
+
+    .button__default-black span {
+        max-width: 100%;
+    }
+
+    .button__default-transparent {
+        margin-top: 14px;
+        margin-left: 0;
+        width: 100%;
+        background: #fff;
+        opacity: 0.9;
+    }
+
+    .button__default-transparent span {
+        max-width: 100%;
+    }
+
+    .information__header-image {
+        margin-left: 0;
+    }
+
+    .information__header-image img {
+        max-width: none;
+        min-width: 100%;
+    }
+
+    .information__header-text {
+        font-size: 25px;
+        max-width: 450px;
+    }
+
+    .information__body {
+        margin-top: 34px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .information__body-list {
+        margin-left: 0;
+        margin-top: 24px;
+    }
+
+    .stages {
+        margin-top: 100px;
+        display: none;
+    }
+
+    .stages__mobile-controls{
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .stages__mobile-prev {
+    }
+    .stages__mobile-paginator {
+    }
+    .paginator-isActive {
+    }
+    .stages__mobile-paginator-division {
+    }
+    .stages__mobile-next {
+    }
+
+}
+
+@media (max-width: 764px) {
+
+    .header {
+        margin-top: 18px;
+    }
+
+    .preview__body {
+        margin-top: 40px;
+    }
+
+    .preview {
+        height: 113%;
+    }
+
+    .preview::after {
+        background-position: bottom -23px right -19em;
+    }
+
+    .preview__body {
+        margin-top: 37px;
+    }
+
+    .preview__body-text {
+        text-align: left;
+        margin-top: 25px;
+    }
+
+    .preview__body-btns {
+        margin-top: 30px;
+    }
+
+    .button__default-black {
+        height: 47px;
+    }
+
+    .button__default-transparent {
+        height: 47px;
+    }
+
+    .preview__bottom {
+        height: 38px;
+    }
+
+    .preview__bottom-item {
+        font-size: 16px;
+    }
+
+    .preview__bottom-item {
+        margin: 10px 0;
+    }
+
+    .information__header {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .media__md {
+        margin-bottom: 350px;
+    }
+
+    .information__header-image {
+        position: absolute;
+        top: 26%;
+        left: 5%;
+    }
+
+    .information__list-text {
+        font-size: 28px;
+    }
+
+    .information__list-card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .information__list-card::after {
+        display: none;
+    }
+
+    .text-bold {
+        margin-top: 12px;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 420px) {
+    .preview::after {
+        background-image: url("../images/image/bg-preview-375.png");
+        background-position: bottom 16px right 0em;
+    }
+
+    .information {
+        margin-top: 50px;
+    }
+
+    .information__header-text {
+        padding: 0 2px;
+        font-size: 28px;
+    }
+
+    .information__header-image {
+        position: absolute;
+        top: 31%;
+        left: 0%;
+    }
+
+    .information__header-image img {
+        max-width: 100%;
+        min-width: none;
+    }
+
+    .media__md {
+        margin-bottom: 265px;
+    }
+
+    .information__body-image img {
+        width: 359px;
+    }
+
+    .information__list-card {
+        padding: 14px 0;
+    }
+
+    .information__body-list {
+        margin-top: 11px;
+    }
+
+    .information__list-info {
+        margin-top: 30px;
+    }
+
+    .media--md-text {
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .media--md-bold {
+        margin-left: 16px;
+    }
+
+    .text-bold {
+        margin-top: 12px
+    }
+
+    .information__list-text--bottom {
+        margin-top: 26px;
+    }
+}

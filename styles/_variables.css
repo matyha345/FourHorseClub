@@ -1,0 +1,32 @@
+
+:root{
+
+    --font-family: "Golos Text", sans-serif;
+    --second-family: "Merriweather", sans-serif;
+
+    /* color */
+
+    --mine-shaft: #1f1f1f;
+    --white-color: #fff;
+    --saffron-mango: #FBCE51;
+    --flamingo: #F54932;
+    --mine-shaft--two: #313131; 
+    --azure: #3057A2;
+    --alto: #D0D0D0;
+    --pearl-bush: #E9DED4;
+    /* background */
+
+    --bg-white: #fff;
+    --bg-preview: #e6ceb7c6;
+
+
+    --gap:200px;
+
+    --z-index-20: -20; 
+    --z-index-10: -10; 
+    --z-index-0: 0; 
+    --z-index20: 20; 
+    --z-index40: 40;
+    --z-index50: 50;
+    --z-index100: 100; 
+}
