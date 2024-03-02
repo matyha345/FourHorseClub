@@ -16,6 +16,11 @@
     --pearl-bush: #E9DED4;
     /* background */
 
+    --swiper-theme-color: red;
+    --swiper-pagination-color: black;
+    --swiper-pagination-bullet-horizontal-gap: 3px;
+    --swiper-pagination-bullet-size: 10px;
+
     --bg-white: #fff;
     --bg-preview: #e6ceb7c6;
 

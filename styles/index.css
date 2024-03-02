@@ -5,8 +5,8 @@
 @import './_variables.css';
 @import './_animations.css';
 
-/* ========= main-styles ========= */
-/* ========= main-styles ========= */
+/* ==================main-styles================== */
+/* ==================main-styles================== */
 
 
 .main {
@@ -15,6 +15,7 @@
     position: relative;
     z-index: var(--z-index-0);
     font-family: var(--font-family);
+    min-width: 375px;
 }
 
 .container {
@@ -83,15 +84,15 @@
 }
 
 
-/* ========= header ========= */
-/* ========= header ========= */
+/* ==================header================== */
+/* ==================header================== */
 
 .header {
     margin-top: 26px;
 }
 
-/* ========= preview ========= */
-/* ========= preview ========= */
+/* ==================preview================== */
+/* ==================preview================== */
 
 .preview {
     position: relative;
@@ -172,8 +173,8 @@
 
 }
 
-/* ========= RunningLine ========= */
-/* ========= RunningLine ========= */
+/* ==================RunningLine================== */
+/* ==================RunningLine================== */
 
 .preview__bottom {
     width: 100%;
@@ -234,12 +235,12 @@
     animation-play-state: paused;
 }
 
-/* ========= RunningLine-end ========= */
-/* ========= RunningLine-end  ========= */
+/* ==================RunningLine-end================== */
+/* ==================RunningLine-end================== */
 
 
-/* ========= information ========= */
-/* ========= information ========= */
+/* ==================information================== */
+/* ==================information================== */
 
 .information {
     margin-top: 80px;
@@ -377,8 +378,8 @@
     color: #3057a2;
 }
 
-/* ========= information-end ========= */
-/* ========= information-end ========= */
+/* ==================information-end================== */
+/* ==================information-end================== */
 
 .stages {
     margin-top: 200px;
@@ -487,12 +488,6 @@
 
 }
 
-.stages__aside-children--six {
-    grid-area: 3 / 1 / 4 / 2;
-    display: flex;
-
-}
-
 .stages__aside-children--seven {
     grid-area: 3 / 1 / 4 / 2;
     display: flex;
@@ -518,6 +513,10 @@
     border-radius: 100%;
 }
 
+.hidden{
+    display: none;
+}
+
 .children-text {
     text-wrap: balance;
     font-weight: 500;
@@ -534,13 +533,60 @@
 .stages__mobile-controls{
     display: none;
 }
+/* ==================stagesSwiper================== */
+/* ==================stagesSwiper================== */
 
-/* ========= stages-end ========= */
-/* ========= stages-end ========= */
+.stages__wrapper{
+    position: relative;
+}
+
+[data-stagesSwiper]{
+    display: none;
+}
 
 
-/* ========= slider ========= */
-/* ========= slider ========= */
+[data-parent-element] {
+    margin-top: 140px;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 62px;
+    padding-left: 20px;
+    padding-right: 24px;
+    position: relative;
+    background-image: url("../images/image/bg-preview.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: var(--z-index-20);
+    box-sizing: border-box;
+}
+
+[data-parent-element]::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--bg-preview);
+    z-index: var(--z-index-10);
+}
+.stages__aside-children{
+    display: flex;
+}
+
+
+
+/* ==================stages-end================== */
+/* ==================stages-end================== */
+
+
+/* ==================slider================== */
+/* ==================slider================== */
 .sliderS {
     margin-top: 200px;
     position: relative;
@@ -631,8 +677,7 @@
 
 .paginator,
 .paginator-division {
-    display: block;
-    display: inline-block;
+    display: flex;
     font-weight: 400;
     font-size: 16px;
     line-height: 120%;
@@ -641,8 +686,8 @@
 }
 
 .paginator {
-    margin-left: 14px;
-    margin-right: 14px;
+    margin-left: 19px;
+    margin-right: 21px;
 }
 
 .paginator-division {
@@ -674,8 +719,8 @@
     fill: var(--saffron-mango);
 }
 
-/* ========= slider-end ========= */
-/* ========= slider-end ========= */
+/* ==================slider-end================== */
+/* ==================slider-end================== */
 
 
 .running__line-footer {
@@ -683,8 +728,8 @@
     margin-top: 198px;
 }
 
-/* ========= footer ========= */
-/* ========= footer ========= */
+/* ==================footer================== */
+/* ==================footer================== */
 
 .footer {
     padding-top: 40px;

@@ -32,12 +32,81 @@ const dataSlider = [
 
 ]
 
+const dataStagesSwiper = [
+    {
+        blocks: [
+            { text: 'Строительство железнодорожной магистрали Москва-Васюки', span: 1 },
+            { text: 'Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов', span: 2 }
+        ]
+    },
+    {
+        blocks: [
+            { text: 'Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет', span: 3 }
+        ]
+    },
+    {
+        blocks: [
+            { text: 'Строительство дворца для турнира', span: 4 },
+            { text: 'Размещение гаражей для гостевого автотранспорта', span: 5 }
+        ]
+    },
+    {
+        blocks: [
+            { text: 'Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов', span: 6 }
+        ]
+    },
+    {
+        blocks: [
+            { text: 'Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все концы света, включая Лос-Анжелос и Мельбурн', span: 7 }
+        ]
+    }
+];
+
 document.addEventListener("DOMContentLoaded", function () {
     loadContent("header", "/components/_header.html");
     loadContent("runningLine", "/components/_running-line.html");
+    loadContent("stages", "/components/_stages.html");
     loadContent("runningLineFooter", "/components/_running-line.html");
     loadContent("footer", "/components/_footer.html");
 
+    const createStagesSlider = () => {
+        const results = document.getElementById("stagesSwiperResults");
+
+        const createSlider = dataStagesSwiper.map((item) => {
+            const blocksHTML = item.blocks.map((block) => `
+                <div class="stages__aside-children">
+                    <span class="children-span">${block.span}</span>
+                    <span class="children-text">${block.text}</span>
+                </div>
+            `).join("");
+
+            // Добавляем родительский элемент вокруг разметки слайда
+            return `
+                <div class="swiper-slide">
+                    <div data-parent-element>
+                        ${blocksHTML}
+                    </div>
+                </div>
+            `;
+        });
+
+        results.innerHTML = createSlider.join("");
+    };
+
+    createStagesSlider()
+
+    const stagesSwiper = new Swiper("#stagesSwiper", {
+        slidesPerView: 1,
+
+        pagination: {
+            el: '.stages__paginator',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".stages__next",
+            prevEl: ".stages__prev",
+        },
+    })
 
     const createDataSlider = () => {
         const results = document.getElementById("mainSwiperResults")
@@ -97,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const currentIndex = swiper.activeIndex;
                 bullets.forEach((bullet, index) => {
                     if (index * 3 <= currentIndex && currentIndex < (index + 1) * 3) {
-                        bullet.classList.add('paginator-isActive'); // Добавляем класс активного пагинатора
+                        bullet.classList.add('paginator-isActive');
                     } else {
                         bullet.classList.remove('paginator-isActive');
                     }
@@ -107,7 +176,10 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 
     const updatePaginatorContent = () => {
-        const currentSlideIndex = swiper.realIndex + 1; // Увеличиваем на 1, так как индексация начинается с 0
+
+        const currentSlideIndexWidth = window.innerWidth <= 1280 ? 1 : 3
+
+        const currentSlideIndex = swiper.realIndex + currentSlideIndexWidth;
         const totalSlides = swiper.slides.length;
 
         const paginatorContent = `${currentSlideIndex} <span>/</span> ${totalSlides}`;
@@ -117,16 +189,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     };
 
-    // Вызываем функцию при инициализации и при изменении слайда
     updatePaginatorContent();
     swiper.on('slideChange', updatePaginatorContent);
 
-    // Вызываем функцию при инициализации и изменении размеров окна
     updatePaginatorContent();
     window.addEventListener('resize', updatePaginatorContent);
-
-
-
 
 
     var mediaRequestText = document.getElementById("media--request")
@@ -148,10 +215,6 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('resize', () => {
         changeText();
     });
-
-
-
-
 })
 
 
