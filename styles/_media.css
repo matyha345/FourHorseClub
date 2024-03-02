@@ -74,6 +74,7 @@
     .stages {
         margin-top: 100px;
     }
+
     .stages__aside::after{
         top: -230px;
         bottom: 0;
@@ -224,7 +225,7 @@
     .information__header-image {
         position: absolute;
         top: 26%;
-        left: 5%;
+        left: 0;
     }
 
     .information__list-text {
@@ -312,7 +313,7 @@
     }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 429px) {
     .preview {
         height: 812px;
     }
@@ -337,8 +338,8 @@
     }
 
     .information__header-image img {
-        max-width: 100%;
-        min-width: none;
+        max-width: 333px;
+        min-width: 333px;
     }
 
     .media__md {
@@ -462,5 +463,35 @@
     }
     .next svg {
         width: 36px;
+    }
+}
+
+@media (min-width: 376px) and (max-width: 429px) {
+    .information__header-image {
+        position: absolute;
+        top: 25%;
+        left: 0%;
+    }
+}
+
+@media (max-width: 374px) {
+    [data-parent-element] {
+        width: 100%;
+    }
+
+    .swiper-slide {
+        padding: 0 10px;
+        margin-right: 0;
+    }
+
+    [data-parent-element] {
+        padding-top: 42px;
+        padding-left: 20px;
+        padding-right: 24px;
+        padding-bottom: 20px;
+    }
+
+    .stages__aside-children:last-child {
+        margin-top: 22px;
     }
 }
