@@ -8,6 +8,9 @@
 /* ==================main-styles================== */
 /* ==================main-styles================== */
 
+html{
+    scroll-behavior: smooth;
+}
 
 .main {
     width: 100%;
@@ -16,6 +19,7 @@
     z-index: var(--z-index-0);
     font-family: var(--font-family);
     min-width: 375px;
+    
 }
 
 .container {
@@ -244,6 +248,8 @@
 
 .information {
     margin-top: 80px;
+    overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 .information__header {
@@ -382,6 +388,7 @@
 /* ==================information-end================== */
 
 .stages {
+    scroll-margin-top: 100px;
     margin-top: 200px;
 }
 
